@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h2 class="donation-title">Ayo Donasi Sekarang</h2>
+<h2 class="donation-title">Ayo Donasi Sekarang!</h2>
 <p class="donation-subtitle">Berikan bantuanmu untuk mereka yang membutuhkan</p>
 
 <div class="form-container">

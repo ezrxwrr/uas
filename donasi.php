@@ -14,7 +14,7 @@
     <form>
 
         <!-- NAMA DONATUR -->
-        <label>Nama Donatur</label>
+        <label>Nama Donatur hii</label>
         <input type="text" name="nama" placeholder="Masukkan nama" required>
 
         <!-- NOMINAL DONASI (AUTO RUPIAH) -->

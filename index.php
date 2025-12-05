@@ -10,7 +10,7 @@
 
 <section class="hero">
     <div class="hero-content">
-        <h1>Bersama Kita Memberi Harapan</h1>
+        <h1>Bersama hii Kita Memberi Harapan</h1>
         <p>Mari wujudkan perubahan melalui donasi yang mudah, aman, dan penuh makna.</p>
 
         <div class="hero-buttons">

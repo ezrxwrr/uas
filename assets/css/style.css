@@ -1,0 +1,365 @@
+/* ============================================================
+   GLOBAL STYLE — RED PASTEL × SOFT GREY ELEGANT
+   Berlaku untuk SEMUA halaman
+============================================================ */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        to bottom right,
+        #F2C8C8,
+        #F7EDEB,
+        #E8B4B4
+    );
+    color: #4A3C3C;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2, h3 {
+    color: #4F3F3A;
+    font-weight: 700;
+}
+
+/* ============================================================
+   NAVBAR — SEMUA Halaman
+============================================================ */
+.navbar {
+    background: #FFFFFF;
+    padding: 18px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #E8B4B4;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #8B5E3C;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links li a {
+    font-weight: 500;
+    color: #4A3C3C;
+    transition: .3s ease;
+}
+
+.nav-links li a:hover {
+    color: #8B5E3C;
+}
+
+/* ============================================================
+   BUTTONS — Dipakai banyak halaman
+============================================================ */
+.btn-primary {
+    background: #D6D6D6;
+    color: #4F3F3A;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #BFBFBF;
+}
+
+.btn-secondary {
+    background: #E8B4B4;
+    color: #755c54;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-secondary:hover {
+    background: #D79FA0;
+}
+
+.btn-logout {
+    background: #D9534F;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* ============================================================
+   BERANDA (HOMEPAGE)
+============================================================ */
+
+/* HERO section */
+.hero {
+    width: 85%;
+    margin: 40px auto;
+    padding: 120px 40px;
+    border-radius: 25px;
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: #FFF5F5;
+}
+
+.hero-content p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #F8EDED;
+    margin-bottom: 32px;
+}
+
+/* Info Donasi box */
+.info-donasi {
+    background: rgba(255,255,255,0.6);
+    padding: 25px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 14px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+#total-donasi {
+    font-size: 20px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ABOUT section */
+.about-section {
+    width: 85%;
+    margin: 60px auto;
+    padding: 35px 28px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    border-left: 6px solid #E8B4B4;
+    border-right: 6px solid #C7C7C7;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #4F3F3A;
+}
+
+.section-desc {
+    font-size: 16px;
+    color: #5A4A4A;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* WHY DONATE section */
+.why-donate {
+    width: 85%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.why-donate h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.why-box {
+    background: rgba(255,255,255,0.65);
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    backdrop-filter: blur(4px);
+    border: 1px solid #E5D1D1;
+    transition: .3s;
+}
+
+.why-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ============================================================
+   FORM — Halaman Login/Daftar/Donasi
+============================================================ */
+.form-container {
+    width: 380px;
+    background: #FFFFFF;
+    margin: 40px auto;
+    padding: 30px 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    border: 1px solid #E8B4B4;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DFA5A5;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    background: #FAF4F4;
+}
+.remember-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* jarak antara checkbox dan teks */
+    margin: 10px 0;
+}
+
+.remember-container input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    transform: translateY(-1px); 
+}
+
+.remember-container label {
+    font-size: 14px;
+    cursor: pointer;
+    color: #4F3F3A;
+}
+
+
+/* ============================================================
+   DONATION PAGE — Halaman Donasi
+============================================================ */
+
+.donation-title {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: #4F3F3A;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.donation-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #5A4A4A;
+    margin-bottom: 30px;
+    font-weight: 300;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ============================================================
+   LEADERBOARD — Halaman Leaderboard.php
+============================================================ */
+
+/* Judul halaman */
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin: 40px 0 20px 0;
+    color: #4F3F3A;
+}
+
+/* Badges */
+.badge-gold {
+    background: #D4AF37;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 25px;
+}
+
+.badge-silver {
+    background: #D6D6D6;
+    color: #4A4A4A;
+    padding: 6px 12px;
+    border-radius: 25px;
+}
+
+.badge-bronze {
+    background: #8B5E3C;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 25px;
+}
+
+/* Tabel */
+table {
+    width: 90%;
+    margin: 20px auto 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+table th {
+    background: #E8B4B4;
+    padding: 14px;
+    color: white;
+    font-size: 15px;
+}
+
+table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+    background: #F7E0E0;
+}
+
+/* ============================================================
+   FOOTER — Semua halaman
+============================================================ */
+.footer {
+    margin-top: 60px;
+    padding: 22px;
+    background: #E8B4B4;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    border-top: 4px solid #8B5E3C;
+}

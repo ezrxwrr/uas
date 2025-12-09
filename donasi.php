@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Donasi - WebDonasi</title>
+    <title>Donasi - Kitabisa</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>

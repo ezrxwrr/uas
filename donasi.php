@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<h2 class="donation-title">Ayo Donasi Sekarang</h2>
+<h2 class="donation-title">Ayo Donasi Sekarang!</h2>
 <p class="donation-subtitle">Berikan bantuanmu untuk mereka yang membutuhkan</p>
 
 <div class="form-container">
     <form>
 
         <!-- NAMA DONATUR -->
-        <label>Nama Donatur</label>
+        <label>Nama Donatur hii</label>
         <input type="text" name="nama" placeholder="Masukkan nama" required>
 
         <!-- NOMINAL DONASI (AUTO RUPIAH) -->

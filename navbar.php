@@ -1,5 +1,7 @@
 <?php
-session_start(); // untuk cek login
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); // untuk cek login
+}
 
 if (isset($_SESSION['user'])) {
     // NAVBAR UNTUK USER YANG SUDAH LOGIN

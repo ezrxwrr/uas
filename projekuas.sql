@@ -1,5 +1,3 @@
-USE `projekuas`;
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.2
 -- https://www.phpmyadmin.net/
@@ -10,12 +8,15 @@ SET time_zone = "+00:00";
 
 SET NAMES utf8mb4;
 
+SET FOREIGN_KEY_CHECKS = 0;
+
 -- Database: `projekuas`
 
 -- --------------------------------------------------------
 -- Table structure for table `donasi`
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `donasi`;
 CREATE TABLE `donasi` (
   `donation_id` int UNSIGNED NOT NULL,
   `user_id` int UNSIGNED NOT NULL,
@@ -27,11 +28,12 @@ CREATE TABLE `donasi` (
 -- Table structure for table `pembayaran`
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `pembayaran`;
 CREATE TABLE `pembayaran` (
   `payment_id` int UNSIGNED NOT NULL,
   `donation_id` int UNSIGNED NOT NULL,
   `user_id` int UNSIGNED NOT NULL,
-  `metode` enum('transfer bank','E-Wallet','QRIS') 
+  `metode` enum('transfer bank','E-Wallet','QRIS')
       CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,6 +41,7 @@ CREATE TABLE `pembayaran` (
 -- Table structure for table `reward`
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `reward`;
 CREATE TABLE `reward` (
   `reward_id` int UNSIGNED NOT NULL,
   `nama` varchar(255) NOT NULL,
@@ -51,6 +54,7 @@ CREATE TABLE `reward` (
 -- Table structure for table `users`
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `user_id` int UNSIGNED NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -62,6 +66,7 @@ CREATE TABLE `users` (
 -- Table structure for table `user_reward`
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS `user_reward`;
 CREATE TABLE `user_reward` (
   `user_reward_id` int UNSIGNED NOT NULL,
   `reward_id` int UNSIGNED NOT NULL,
@@ -70,7 +75,7 @@ CREATE TABLE `user_reward` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
--- Indexes
+-- Indexes and constraints
 -- --------------------------------------------------------
 
 ALTER TABLE `donasi`
@@ -116,7 +121,8 @@ ALTER TABLE `user_reward`
   MODIFY `user_reward_id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
--- Constraints
+-- Constraints (foreign keys)
+-- --------------------------------------------------------
 -- --------------------------------------------------------
 
 ALTER TABLE `donasi`

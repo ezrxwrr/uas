@@ -31,7 +31,7 @@ if ($stmt) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Riwayat Donasi - WebDonasi</title>
+    <title>Riwayat Donasi - Sociomile</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -67,7 +67,7 @@ if ($stmt) {
 </div>
 
 <div class="footer">
-    <p>© 2025 WebDonasi</p>
+    <p>© 2025 Sociomile</p>
     </div>
 
 </body>

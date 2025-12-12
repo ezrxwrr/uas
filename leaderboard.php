@@ -15,7 +15,7 @@ $result = $mysqli->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaderboard - WebDonasi</title>
+    <title>Leaderboard - Sociomile</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -68,8 +68,13 @@ $result = $mysqli->query($sql);
 </div>
 
 <div class="footer">
+<<<<<<< HEAD
     <p>© 2025 WebDonasi</p>
     </div>
+=======
+    <p>© 2025 Sociomile</p>
+</div>
+>>>>>>> aa5274f2217b7a5f867f35e5639749a434b7cb6d
 
 </body>
 </html>

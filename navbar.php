@@ -20,7 +20,7 @@ if (isset($_SESSION['user'])) {
     // NAVBAR UNTUK USER YANG BELUM LOGIN
     ?>
     <nav class="navbar">
-        <div class="logo"><a href="index.php">WebDonasi</a></div>
+        <div class="logo"><a href="index.php">Sociomile</a></div>
         <ul class="nav-links">
             <li><a href="index.php">Beranda</a></li>
             <li><a href="leaderboard.php">Leaderboard</a></li>

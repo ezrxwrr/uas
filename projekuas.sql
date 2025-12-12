@@ -1,16 +1,15 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.2
--- https://www.phpmyadmin.net/
+
+CREATE DATABASE IF NOT EXISTS projekuas;
+USE projekuas;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 SET NAMES utf8mb4;
-
 SET FOREIGN_KEY_CHECKS = 0;
-
--- Database: `projekuas`
 
 -- --------------------------------------------------------
 -- Table structure for table `donasi`
@@ -122,7 +121,6 @@ ALTER TABLE `user_reward`
 
 -- --------------------------------------------------------
 -- Constraints (foreign keys)
--- --------------------------------------------------------
 -- --------------------------------------------------------
 
 ALTER TABLE `donasi`

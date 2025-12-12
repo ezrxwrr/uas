@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard - WebDonasi</title>
+    <title>Dashboard - Sociomile</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -32,7 +32,7 @@
 </section>
 
 <div class="footer">
-    <p>© 2025 WebDonasi</p>
+    <p>© 2025 Sociomile</p>
 </div>
 
 </body>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Donasi - WebDonasi</title>
+    <title>Donasi - Sociomile</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="footer">
-    <p>© 2025 WebDonasi</p>
+    <p>© 2025 Sociomile</p>
 </div>
 
 <script src="assets/js/main.js"></script>

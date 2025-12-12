@@ -1,3 +1,5 @@
+USE `projekuas`;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.2
 -- https://www.phpmyadmin.net/

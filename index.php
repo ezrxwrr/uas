@@ -25,7 +25,7 @@
 </section>
 
 <section class="about-section" id="tentang">
-    <h2 class="section-title">Tentang Website Donasi</h2>
+    <h2 class="section-title">Tentang Sociomile</h2>
 
     <p class="section-desc">
         Kami percaya bahwa setiap orang berhak mendapatkan bantuan. 
@@ -56,7 +56,7 @@
 </section>
 
 <div class="footer">
-    <p>© 2025 WebDonasi</p>
+    <p>© 2025 Sociomile</p>
 </div>
 
 </body>

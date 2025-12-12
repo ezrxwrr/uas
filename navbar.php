@@ -13,7 +13,6 @@ if (isset($_SESSION['user'])) {
             <li><a href="donasi.php">Donasi</a></li>
             <li><a href="riwayat.php">Riwayat Donasi</a></li>
             <li><a href="leaderboard.php">Leaderboard</a></li>
-            <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="logout.php" class="btn-logout">Logout</a></li>
         </ul>
     </nav>

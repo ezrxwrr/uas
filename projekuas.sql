@@ -1,101 +1,144 @@
--- ------------------------------------------------------------
--- Database: projekuas
--- ------------------------------------------------------------
+-- phpMyAdmin SQL Dump
+-- version 5.2.2
+
+CREATE DATABASE IF NOT EXISTS projekuas;
+USE projekuas;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
--- ------------------------------------------------------------
--- Table: users
--- ------------------------------------------------------------
-CREATE TABLE `users` (
-  `user_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nama` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(255) NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `unique_user` (`nama`, `email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
--- ------------------------------------------------------------
--- Table: donasi
--- ------------------------------------------------------------
+-- --------------------------------------------------------
+-- Table structure for table `donasi`
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `donasi`;
 CREATE TABLE `donasi` (
-  `donation_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` INT UNSIGNED NOT NULL,
-  `payment_id` INT UNSIGNED NOT NULL,
-  `nominal` INT NOT NULL,
-  PRIMARY KEY (`donation_id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_payment_id` (`payment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `donation_id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `payment_id` int UNSIGNED NOT NULL,
+  `nominal` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ------------------------------------------------------------
--- Table: pembayaran
--- ------------------------------------------------------------
+-- --------------------------------------------------------
+-- Table structure for table `pembayaran`
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `pembayaran`;
 CREATE TABLE `pembayaran` (
-  `payment_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `donation_id` INT UNSIGNED NOT NULL,
-  `user_id` INT UNSIGNED NOT NULL,
-  `metode` ENUM('transfer bank','E-Wallet','QRIS') NOT NULL,
-  PRIMARY KEY (`payment_id`),
-  KEY `idx_donation_user` (`donation_id`, `user_id`),
-  KEY `idx_user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `payment_id` int UNSIGNED NOT NULL,
+  `donation_id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `metode` enum('transfer bank','E-Wallet','QRIS')
+      CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ------------------------------------------------------------
--- Table: reward
--- ------------------------------------------------------------
+-- --------------------------------------------------------
+-- Table structure for table `reward`
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `reward`;
 CREATE TABLE `reward` (
-  `reward_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nama` VARCHAR(255) NOT NULL,
-  `badge` ENUM('Gold','Silver','Bronze') NOT NULL,
-  `total_donasi` INT UNSIGNED NOT NULL,
-  `transaksi` TEXT,
-  PRIMARY KEY (`reward_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `reward_id` int UNSIGNED NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `badge` enum('Gold','Silver','Bronze') NOT NULL,
+  `total_donasi` int UNSIGNED NOT NULL,
+  `transaksi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ------------------------------------------------------------
--- Table: user_reward
--- ------------------------------------------------------------
+-- --------------------------------------------------------
+-- Table structure for table `users`
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `user_id` int UNSIGNED NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+-- Table structure for table `user_reward`
+-- --------------------------------------------------------
+
+DROP TABLE IF EXISTS `user_reward`;
 CREATE TABLE `user_reward` (
-  `user_reward_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `reward_id` INT UNSIGNED NOT NULL,
-  `user_id` INT UNSIGNED NOT NULL,
-  `donation_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`user_reward_id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_reward_id` (`reward_id`),
-  KEY `idx_donation_id` (`donation_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `user_reward_id` int UNSIGNED NOT NULL,
+  `reward_id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `donation_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ------------------------------------------------------------
--- Foreign Keys
--- ------------------------------------------------------------
+-- --------------------------------------------------------
+-- Indexes and constraints
+-- --------------------------------------------------------
 
 ALTER TABLE `donasi`
-  ADD CONSTRAINT `fk_donasi_user`
-    FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-    ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD PRIMARY KEY (`donation_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `payment_id` (`payment_id`);
 
 ALTER TABLE `pembayaran`
-  ADD CONSTRAINT `fk_pembayaran_user`
-    FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-    ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_pembayaran_donasi`
-    FOREIGN KEY (`donation_id`) REFERENCES `donasi` (`donation_id`)
-    ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD PRIMARY KEY (`payment_id`),
+  ADD KEY `donation_id` (`donation_id`,`user_id`),
+  ADD KEY `user_id` (`user_id`);
+
+ALTER TABLE `reward`
+  ADD PRIMARY KEY (`reward_id`);
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `nama` (`nama`,`email`);
 
 ALTER TABLE `user_reward`
-  ADD CONSTRAINT `fk_user_reward_user`
-    FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
-    ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_user_reward_donasi`
-    FOREIGN KEY (`donation_id`) REFERENCES `donasi` (`donation_id`)
-    ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_user_reward_reward`
-    FOREIGN KEY (`reward_id`) REFERENCES `reward` (`reward_id`)
-    ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD PRIMARY KEY (`user_reward_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `donation_id` (`donation_id`),
+  ADD KEY `reward_id` (`reward_id`);
+
+-- --------------------------------------------------------
+-- AUTO_INCREMENT Set
+-- --------------------------------------------------------
+
+ALTER TABLE `donasi`
+  MODIFY `donation_id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `pembayaran`
+  MODIFY `payment_id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `reward`
+  MODIFY `reward_id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `users`
+  MODIFY `user_id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `user_reward`
+  MODIFY `user_reward_id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+-- --------------------------------------------------------
+-- Constraints (foreign keys)
+-- --------------------------------------------------------
+
+ALTER TABLE `donasi`
+  ADD CONSTRAINT `donasi_ibfk_1` FOREIGN KEY (`user_id`)
+      REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `pembayaran`
+  ADD CONSTRAINT `pembayaran_ibfk_1` FOREIGN KEY (`user_id`)
+      REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pembayaran_ibfk_2` FOREIGN KEY (`donation_id`)
+      REFERENCES `donasi` (`donation_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `user_reward`
+  ADD CONSTRAINT `user_reward_ibfk_1` FOREIGN KEY (`user_id`)
+      REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_reward_ibfk_2` FOREIGN KEY (`donation_id`)
+      REFERENCES `donasi` (`donation_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_reward_ibfk_3` FOREIGN KEY (`reward_id`)
+      REFERENCES `reward` (`reward_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 COMMIT;

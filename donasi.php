@@ -100,9 +100,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Metode Pembayaran</label>
         <select name="metode" required>
             <option value="" disabled <?php echo empty($_POST['metode']) ? 'selected' : ''; ?>>Pilih metode pembayaran</option>
-            <option value="transfer" <?php echo (($_POST['metode'] ?? '')==='Transfer Bank') ? 'selected' : ''; ?>>Transfer Bank</option>
-            <option value="ewallet" <?php echo (($_POST['metode'] ?? '')==='E-wallet') ? 'selected' : ''; ?>>E-Wallet (Dana / OVO / Gopay)</option>
-            <option value="qris" <?php echo (($_POST['metode'] ?? '')==='QRIS') ? 'selected' : ''; ?>>QRIS</option>
+            <option value="transfer bank" <?php echo (($_POST['metode'] ?? '')==='transfer bank') ? 'selected' : ''; ?>>Transfer Bank</option>
+            <option value="E-Wallet" <?php echo (($_POST['metode'] ?? '')==='E-Wallet') ? 'selected' : ''; ?>>E-Wallet (Dana / OVO / Gopay)</option>
+            <option value="QRIS" <?php echo (($_POST['metode'] ?? '')==='QRIS') ? 'selected' : ''; ?>>QRIS</option>
         </select>
 
         <button type="submit" class="btn-primary">Kirim Donasi</button>

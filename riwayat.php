@@ -55,7 +55,23 @@ if ($stmt) {
             <tr>
                 <td><?php echo htmlspecialchars($row['donation_id']); ?></td>
                 <td>Rp <?php echo number_format((int)$row['nominal'],0,',','.'); ?></td>
-                <td><?php echo htmlspecialchars($row['metode'] ?? '-'); ?></td>
+                <?php
+                $metode_label = '-';
+                $m = trim((string)($row['metode'] ?? ''));
+                $m_l = strtolower($m);
+                if ($m_l !== '') {
+                    if (strpos($m_l, 'transfer') !== false) {
+                        $metode_label = 'Transfer Bank';
+                    } elseif (strpos($m_l, 'ewallet') !== false || strpos($m_l, 'e-wallet') !== false || strpos($m_l, 'e wallet') !== false) {
+                        $metode_label = 'E-Wallet';
+                    } elseif ($m_l === 'qris' || strpos($m_l, 'qris') !== false) {
+                        $metode_label = 'QRIS';
+                    } else {
+                        $metode_label = $m;
+                    }
+                }
+                ?>
+                <td><?php echo htmlspecialchars($metode_label); ?></td>
                 <td><?php echo htmlspecialchars($row['payment_id'] ?? '-'); ?></td>
             </tr>
         <?php endforeach; ?>

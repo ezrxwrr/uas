@@ -13,3 +13,4 @@
 [2025-12-14 12:55:25] FAIL: bad password for email=admin123@gmail.com
 [2025-12-14 12:55:31] FAIL: bad password for email=admin123@gmail.com
 [2025-12-14 12:56:28] SUCCESS: user_id=4 email=interface@gmail.com nama=yahaha
+[2025-12-14 13:08:07] SUCCESS: user_id=3 email=rifqirahman@gmail.com nama=saipul

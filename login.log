@@ -9,3 +9,7 @@
 [2025-12-12 03:36:14] SUCCESS: user_id=1 email=lebron@gmail.com nama=zr
 >>>>>>> ebbccc4bed16a8ae0b3a8dbde37bd4450b7ef2b9
 [2025-12-14 10:15:58] SUCCESS: user_id=3 email=rifqirahman@gmail.com nama=saipul
+[2025-12-14 12:53:28] SUCCESS: user_id=3 email=rifqirahman@gmail.com nama=saipul
+[2025-12-14 12:55:25] FAIL: bad password for email=admin123@gmail.com
+[2025-12-14 12:55:31] FAIL: bad password for email=admin123@gmail.com
+[2025-12-14 12:56:28] SUCCESS: user_id=4 email=interface@gmail.com nama=yahaha

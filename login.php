@@ -91,13 +91,12 @@ include 'navbar.php';
 </div>
 
 <div class="footer">
-<<<<<<< HEAD
-    <p>© 2025 WebDonasi</p>
+    <p>© 2025 Sociomile</p>
     </div>
 =======
     <p>© 2025 Sociomile</p>
 </div>
->>>>>>> aa5274f2217b7a5f867f35e5639749a434b7cb6d
+
 
 </body>
 </html>

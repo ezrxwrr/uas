@@ -65,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-=======
     <title>Donasi - Sociomile</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="utf-8">

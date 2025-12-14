@@ -68,7 +68,7 @@ $result = $mysqli->query($sql);
 </div>
 
 <div class="footer">
-    <p>© 2025 WebDonasi</p>
+    <p>© 2025 Sociomile</p>
     </div>
 =======
     <p>© 2025 Sociomile</p>

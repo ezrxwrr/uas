@@ -93,10 +93,6 @@ include 'navbar.php';
 <div class="footer">
     <p>© 2025 Sociomile</p>
     </div>
-=======
-    <p>© 2025 Sociomile</p>
-</div>
-
 
 </body>
 </html>

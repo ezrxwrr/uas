@@ -65,11 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-    <title>Donasi - Kitabisa</title>
 =======
     <title>Donasi - Sociomile</title>
->>>>>>> 0729d3530627b401dc19feda29012a7b9e53386d
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
